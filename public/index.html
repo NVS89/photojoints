@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="userApp">
+    <head>
+        <base href="/">
+        <meta charset="utf-8" />
+        <title>
+            Users
+        </title>
+        <!--jQuery-->
+        <script src="lib/jquery/jquery.js"></script>
+        <!--Bootdtrap-->
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <!--AngularJS-->
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-resource/angular-resource.js"></script>
+        <script src="lib/angular-ui-router/angular-ui-router.js"></script>
+        <script src="lib/angular-messages/angular-messages.js"></script>
+        <script src="app.js"></script>
+        <script src="scripts/validController/validController.js"></script>
+        <script src="scripts/userController/userController.js"></script>
+        <script src="scripts/userServices/userServices.js"></script>
+    </head>
+    <body ng-cloak>
+        <div class="container-fluid">
+            <div ui-view></div>
+        </div>
+    </body>
+</html>

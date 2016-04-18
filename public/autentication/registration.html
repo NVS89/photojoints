@@ -1,0 +1,120 @@
+<form name="regForm" ng-submit="submitForm(regForm.$valid)" novalidate>
+    <div class="form-group" ng-class="{'has-error': regForm.firstName.$touched && regForm.firstName.$invalid}">
+        <label for="name">First Name</label>
+        <input type="text"
+               class="form-control"
+               name="firstName"
+               ng-model="user.name"
+               placeholder="Name"
+               ng-minlength="3"
+               ng-maxlength="9"
+               required>
+        <div class="help-block" ng-messages="regForm.firstName.$error" ng-show="regForm.firstName.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': regForm.lastName.$touched && regForm.lastName.$invalid}">
+        <label for="name">Last Name</label>
+        <input type="text"
+               class="form-control"
+               name="lastName"
+               ng-model="user.name"
+               placeholder="Name"
+               ng-minlength="3"
+               ng-maxlength="9"
+               required>
+        <div class="help-block" ng-messages="regForm.lastName.$error" ng-show="regForm.lastName.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': regForm.email.$touched && regForm.email.$invalid}">
+        <label for="email">Email</label>
+        <input type="email"
+               class="form-control"
+               name="email"
+               ng-model="user.email"
+               placeholder="Email"
+               required>
+        <div class="help-block" ng-messages="regForm.email.$error" ng-show="regForm.email.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': regForm.date.$touched && regForm.date.$invalid}">
+        <label for="Date">Birthdate</label>
+        <input type="date"
+               class="form-control"
+               name="date"
+               ng-model="user.birthDate"
+               placeholder="Enter your Birthdate">
+        <div class="help-block" ng-messages="regForm.date.$error" ng-show="regForm.date.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': regForm.login.$touched && regForm.login.$invalid}">
+        <label for="login">Login</label>
+        <input type="text"
+               class="form-control"
+               name="login"
+               ng-model="user.login"
+               placeholder="Enter your Login"
+               ng-minlength="3"
+               ng-maxlength="9"
+               required>
+        <div class="help-block" ng-messages="regForm.login.$error" ng-show="regForm.login.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': regForm.password.$touched && regForm.password.$invalid}">
+        <label for="password">Password</label>
+        <input type="text"
+               class="form-control"
+               name="password"
+               ng-model="user.password"
+               placeholder="Password"
+               ng-minlength="3"
+               ng-maxlength="9"
+               required>
+        <div class="help-block" ng-messages="regForm.password.$error" ng-show="regForm.password.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': regForm.passwordConfirm.$touched && regForm.passwordConfirm.$invalid}">
+        <label for="password1">Confirm Password</label>
+        <input type="text"
+               class="form-control"
+               name="passwordConfirm"
+               ng-model="user.passwordConfirm"
+               placeholder="Confirm your password"
+               ng-minlength="3"
+               ng-maxlength="9"
+               required>
+        <div class="help-block" ng-messages="regForm.passwordConfirm.$error" ng-show="regForm.passwordConfirm.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label> </label>
+        <select class="form-control">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <button type="submit"
+                    ui-sref="home"
+                    class="btn btn-block btn-info"
+                    ng-disabled="regForm.$invalid">
+                Submit <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+<form name="authoriseForm" ng-submit="submitForm(authoriseForm.$valid)" novalidate>
+    <div class="form-group" ng-class="{'has-error': authoriseForm.login.$touched && authoriseForm.login.$invalid}">
+        <label for="login">Login</label>
+        <input type="text"
+               class="form-control"
+               name="login"
+               ng-model="user.login"
+               placeholder="Login"
+               required>
+        <div class="help-block" ng-messages="authoriseForm.login.$error" ng-show="authoriseForm.login.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': authoriseForm.password.$touched && authoriseForm.password.$invalid}">
+        <label for="password">Password</label>
+        <input type="password"
+               class="form-control"
+               name="password"
+               ng-model="user.password"
+               placeholder="Password"
+               required>
+        <div class="help-block" ng-messages="authoriseForm.password.$error" ng-show="authoriseForm.password.$touched">
+            <div ng-messages-include="autentication/message_template.html"></div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for=""></label>
+        <input type="checkbox"> Remember me
+    </div>
+
+    <div class="form-group row">
+        <div class="col-xs-6 col-xs-offset-3">
+            <button type="submit"
+                    ui-sref="home"
+                    class="btn btn-block btn-info"
+                    ng-disabled="authoriseForm.$invalid">
+                Enter <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+{
+  "name": "PhotoJoints",
+  "description": "loading front-end components",
+  "main": "",
+  "authors": [
+    "Nick1889 <nvskiev@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "front-end"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angular-resource": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "angular-messages": "~1.4.8"
+  }
+}

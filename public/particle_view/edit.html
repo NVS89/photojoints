@@ -1,0 +1,53 @@
+<h1>Edit User</h1>
+
+<div class="row">
+    <div class="col-md-5">
+        <form name="editForm" ng-submit="submitForm(editForm.$valid)" novalidate>
+            <div class="form-group" ng-class="{'has-error': editForm.Login.$touched && editForm.Login.$invalid}">
+                <label for="Login">Login</label>
+                <input name="Login"
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.loginName"
+                       ng-minlength="5"
+                       ng-maxlength="12"
+                       required>
+                <div class="help-block" ng-messages="editForm.Login.$error" ng-show="editForm.Login.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.Password.$touched && editForm.Password.$invalid}">
+                <label for="Password">Password</label>
+                <input name="Password"
+                       type="text"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.password"
+                       ng-minlength="8"
+                       ng-maxlength="18"
+                       required>
+                <div class="help-block" ng-messages="editForm.Password.$error" ng-show="editForm.Password.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': editForm.Date_Created.$touched && editForm.Date_Created.$invalid}">
+                <label for="Date_Created">Date Сreated</label>
+                <input name="Birthday"
+                       type="date"
+                       class="form-control"
+                       placeholder="Enter director"
+                       ng-model="user.date_created"
+                       required>
+                <div class="help-block" ng-messages="editForm.Date_Created.$error" ng-show="editForm.Date_Created.$touched">
+                    <div ng-messages-include="autentication/message_template.html"></div>
+                </div>
+            </div>
+            <a href="/home" class="btn btn-default">Cancel</a>
+            <button type="submit"
+                    class="btn btn-primary"
+                    ng-disabled="editForm.$invalid"
+                    ng-click="edit()">Save</button>
+        </form>
+    </div>
+</div>

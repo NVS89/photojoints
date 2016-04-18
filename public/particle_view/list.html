@@ -1,0 +1,29 @@
+<div>
+    <h1>List Users</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Login</th>
+            <th>Password</th>
+            <th>Date Created</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users">
+            <td>
+                <a ui-sref=".edit({id:user._id})" class="btn btn-default btn-xs">edit</a>
+                <a ui-sref=".delete({id:user._id})" class="btn btn-danger btn-xs">delete</a>
+            </td>
+            <td>{{user.loginName}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.date_created}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <p>
+        <a ui-sref=".addNew" class="btn btn-primary">Add New User</a>
+    </p>
+</div>
+
+<div ui-view></div>
